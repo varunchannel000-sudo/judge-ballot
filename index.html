@@ -59,6 +59,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .btn-primary{width:100%;padding:15px;background:var(--ink);color:var(--warm-white);border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.02em;margin-top:8px}
 .btn-primary:hover{background:#2E251E}
 .btn-primary:active{transform:scale(.99)}
+.btn-biometric{width:100%;padding:15px;background:var(--sage);color:white;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.02em;margin-bottom:16px}
+.btn-biometric:hover{background:#6a8e76}
+.divider-line{margin:20px 0;display:flex;align-items:center;gap:12px}
+.divider-line div{flex:1;height:1px;background:var(--border)}
+.divider-line span{font-size:12px;color:var(--ink-light);font-weight:500;text-transform:uppercase}
 .back-link{text-align:center;margin-top:20px}
 .back-link button{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink-muted);cursor:pointer}
 .back-link button:hover{color:var(--accent)}
@@ -123,9 +128,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .btn-save-finals:hover{background:#2E251E}
 .btn-save-finals:active{transform:scale(.99)}
 
-.btn-add-finalist{padding:12px 24px;background:var(--sage);color:white;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:20px}
-.btn-add-finalist:hover{background:#6a8e76}
-
 .btn-add-podium{padding:12px 24px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:20px}
 .btn-add-podium:hover{background:#B5602E}
 
@@ -137,6 +139,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .medal-gold{background:#fff8dc;color:#b89f2f}
 .medal-silver{background:#f0f0f0;color:#888}
 .medal-bronze{background:#ffe4d6;color:#a0622a}
+
+.finalist-card{background:var(--warm-white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;margin-bottom:16px;display:flex;align-items:center;gap:16px;animation:slideIn .25s ease}
+.finalist-card-avatar{width:44px;height:44px;border-radius:50%;background:var(--sage-pale);color:var(--sage);font-family:'Playfair Display',serif;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.finalist-card-info{flex:1}
+.finalist-card-name{font-size:16px;font-weight:600;color:var(--ink)}
+.finalist-card-meta{font-size:13px;color:var(--ink-light);margin-top:4px}
 
 /* ── MODALS ── */
 .modal-overlay{position:fixed;inset:0;z-index:999;background:rgba(26,20,16,.45);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -185,29 +193,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 /* STATUS LETTER */
 #status-page{display:none;min-height:100vh;position:relative;z-index:1;background:var(--cream)}
 .confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
-
-/* FINALISTS MODAL */
-.finalist-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
-.finalist-row:last-child{border-bottom:none}
-.finalist-avatar{width:36px;height:36px;border-radius:50%;background:var(--sage-pale);color:var(--sage);font-family:'Playfair Display',serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-
-.finalist-card{background:var(--warm-white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;margin-bottom:16px;display:flex;align-items:center;gap:16px;animation:slideIn .25s ease}
-.finalist-card-avatar{width:44px;height:44px;border-radius:50%;background:var(--sage-pale);color:var(--sage);font-family:'Playfair Display',serif;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.finalist-card-info{flex:1}
-.finalist-card-name{font-size:16px;font-weight:600;color:var(--ink)}
-.finalist-card-meta{font-size:13px;color:var(--ink-light);margin-top:4px}
-
-.podium-display{background:var(--sage-pale);border:1.5px solid rgba(123,158,135,.3);border-radius:var(--radius-sm);padding:24px;margin-top:20px}
-.podium-section-title{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:16px}
-.podium-member{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(123,158,135,.2)}
-.podium-member:last-child{border-bottom:none}
-.podium-member-badge{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;flex-shrink:0;font-weight:700;font-size:13px;color:white}
-.gold-badge{background:#c4a757}
-.silver-badge{background:#a3a3a3}
-.bronze-badge{background:#b8773d}
-.podium-member-info{flex:1}
-.podium-member-name{font-size:14px;font-weight:600;color:var(--ink)}
-.podium-member-rank{font-size:12px;color:var(--sage);font-weight:600}
+.status-tabs{display:flex;gap:4px;background:var(--cream);padding:4px;border-radius:var(--radius-sm);margin-bottom:24px;width:fit-content}
+.status-tab{padding:7px 20px;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--ink-muted);cursor:pointer;border-radius:7px;transition:all .2s}
+.status-tab.active{background:var(--warm-white);color:var(--ink);box-shadow:var(--shadow)}
+.status-tab:hover:not(.active){color:var(--ink)}
+.status-view{display:none}
+.status-view.active{display:block}
 
 /* TOAST */
 .toast{position:fixed;bottom:24px;right:24px;background:var(--ink);color:white;padding:14px 24px;border-radius:var(--radius-sm);font-size:13px;font-weight:500;border-left:3px solid var(--accent);z-index:9999;transform:translateY(80px);opacity:0;transition:all .3s;pointer-events:none}
@@ -259,6 +250,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       <input type="password" id="j-pass" placeholder="••••••••"/>
     </div>
     <button class="btn-primary" onclick="doJudgeLogin()">Sign In →</button>
+    <div class="divider-line"><div></div><span>Or</span><div></div></div>
+    <button class="btn-biometric" onclick="attemptBiometric()">🔐 Use Touch ID / Face ID</button>
     <div class="back-link"><button onclick="show('landing')">← Back to home</button></div>
   </div>
 </div>
@@ -321,7 +314,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <div class="page" id="page-placings">
     <div class="page-header">
       <h2>Placings</h2>
-      <p>Manage finals selections and view podium rankings</p>
+      <p>Manage finals selections and podium rankings</p>
     </div>
     <div class="sub-tabs">
       <button class="sub-tab active" id="stab-finals" onclick="switchSubTab('finals')">Finals</button>
@@ -332,12 +325,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       <button class="btn-save-finals" onclick="saveFinalists()">Save All Changes</button>
     </div>
     <div class="sub-page" id="sub-final-placings">
-      <div style="margin-bottom:40px">
-        <h3 style="font-size:18px;font-weight:600;color:var(--ink);margin-bottom:16px">Finalists</h3>
-        <button class="btn-add-finalist" onclick="openAddFinalistModal()">+ Add Finalist</button>
-        <div id="finalists-wrap" class="finals-list"></div>
-      </div>
-      <div style="border-top:1.5px solid var(--border);padding-top:40px">
+      <h3 style="font-size:18px;font-weight:600;color:var(--ink);margin-bottom:16px">Finalists</h3>
+      <div id="finalists-wrap" class="finals-list"></div>
+      <div style="border-top:1.5px solid var(--border);padding-top:40px;margin-top:40px">
         <h3 style="font-size:18px;font-weight:600;color:var(--ink);margin-bottom:16px">Podium</h3>
         <button class="btn-add-podium" onclick="openAddPodiumModal()">+ Add Podium Member</button>
         <div id="podium-wrap" class="finals-list"></div>
@@ -356,7 +346,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <div style="max-width:680px;margin:80px auto;padding:0 32px;text-align:center">
     <div id="pp-avatar" style="width:80px;height:80px;border-radius:50%;background:var(--accent-pale);color:var(--accent);font-family:'Playfair Display',serif;font-size:28px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 24px"></div>
     <h1 style="font-family:'Playfair Display',serif;font-size:42px;margin-bottom:12px">Welcome, <em id="pp-name" style="color:var(--accent);font-style:italic"></em>!</h1>
-    <p style="color:var(--ink-light);font-size:16px;font-weight:300;margin-bottom:48px;line-height:1.7">You have successfully signed into the Speech &amp; Debate Participant Portal. Click below to view your ballot and status update.</p>
+    <p style="color:var(--ink-light);font-size:16px;font-weight:300;margin-bottom:48px;line-height:1.7">You have successfully signed into the Speech &amp; Debate Participant Portal. Click below to view your tournament status update.</p>
     <button onclick="showStatusPage()" style="padding:18px 48px;background:var(--ink);color:white;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;cursor:pointer;transition:background .2s;letter-spacing:.02em">📬 View Status Update</button>
   </div>
 </div>
@@ -369,6 +359,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <button class="logout-btn" onclick="show('p-portal')">← Back to Portal</button>
   </div>
   <div style="max-width:720px;margin:48px auto;padding:0 32px 80px">
+    <div id="status-tabs-wrap" class="status-tabs"></div>
     <div id="letter-box" style="background:var(--warm-white);border:1.5px solid var(--border);border-radius:var(--radius);padding:60px 64px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden"></div>
   </div>
 </div>
@@ -456,26 +447,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </div>
 </div>
 
-<!-- ADD FINALIST MODAL -->
-<div class="modal-overlay" id="add-finalist-modal" onclick="if(event.target===this)closeAddFinalist()">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeAddFinalist()">×</button>
-    <div class="modal-tag">Add to Finalists</div>
-    <div class="modal-title">Select Finalist</div>
-    <div class="form-group">
-      <label>Choose from finalists</label>
-      <select id="finalist-select">
-        <option value="">Select a finalist…</option>
-      </select>
-    </div>
-    <div class="modal-divider"></div>
-    <div class="modal-footer-btns">
-      <button class="btn-cancel-modal" onclick="closeAddFinalist()">Cancel</button>
-      <button class="btn-save-modal" onclick="addFinalistToPlacements()">Add Finalist →</button>
-    </div>
-  </div>
-</div>
-
 <!-- ADD PODIUM MODAL -->
 <div class="modal-overlay" id="add-podium-modal" onclick="if(event.target===this)closeAddPodium()">
   <div class="modal-box">
@@ -510,15 +481,13 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <script>
 // ─── STATE ────────────────────────────────────────────────────────────────────
 let participants = JSON.parse(localStorage.getItem('sdb_v2')||'[]');
-let finalists = JSON.parse(localStorage.getItem('sdb_finals')||'[]'); // array of IDs
-let finalPlacingFinalists = JSON.parse(localStorage.getItem('sdb_final_placing_finalists')||'[]'); // array of IDs for placements
-let podiumMembers = JSON.parse(localStorage.getItem('sdb_podium')||'[]'); // array of {id, medal}
+let finalists = JSON.parse(localStorage.getItem('sdb_finals')||'[]');
+let podiumMembers = JSON.parse(localStorage.getItem('sdb_podium')||'[]');
 let currentParticipant = null;
 
 function persist(){
   localStorage.setItem('sdb_v2',JSON.stringify(participants));
   localStorage.setItem('sdb_finals',JSON.stringify(finalists));
-  localStorage.setItem('sdb_final_placing_finalists',JSON.stringify(finalPlacingFinalists));
   localStorage.setItem('sdb_podium',JSON.stringify(podiumMembers));
 }
 
@@ -549,6 +518,31 @@ function doJudgeLogin(){
   }
 }
 
+async function attemptBiometric(){
+  if(!window.PublicKeyCredential){
+    alert('Biometric authentication not supported on this device');
+    return;
+  }
+  try{
+    const options={
+      challenge:new Uint8Array(32),
+      rp:{name:'Speech & Debate'},
+      user:{id:new Uint8Array(16),name:'judge@example.com',displayName:'Judge'},
+      pubKeyCredParams:[{type:'public-key',alg:-7}],
+      authenticatorSelection:{authenticatorAttachment:'platform',userVerification:'required'}
+    };
+    const credential=await navigator.credentials.get({publicKey:options});
+    if(credential){
+      document.getElementById('j-err').classList.remove('show');
+      refreshPortal();
+      show('portal');
+    }
+  }catch(e){
+    document.getElementById('j-err').textContent='Biometric authentication failed. Please try again or use password login.';
+    document.getElementById('j-err').classList.add('show');
+  }
+}
+
 function doParticipantLogin(){
   const e=document.getElementById('p-email').value.trim().toLowerCase();
   const p=document.getElementById('p-pass').value;
@@ -572,11 +566,19 @@ function switchTab(t){
   document.getElementById('page-'+t).classList.add('active');
   if(t==='placings'){renderFinalsTab();renderFinalPlacings()}
 }
+
 function switchSubTab(t){
   document.querySelectorAll('.sub-tab').forEach(b=>b.classList.remove('active'));
   document.querySelectorAll('.sub-page').forEach(p=>p.classList.remove('active'));
   document.getElementById('stab-'+t).classList.add('active');
   document.getElementById('sub-'+t).classList.add('active');
+}
+
+function switchStatusTab(t){
+  document.querySelectorAll('.status-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.status-view').forEach(p=>p.classList.remove('active'));
+  document.getElementById('status-tab-'+t).classList.add('active');
+  document.getElementById('status-view-'+t).classList.add('active');
 }
 
 // ─── REFRESH ──────────────────────────────────────────────────────────────────
@@ -706,26 +708,25 @@ function saveFinalists(){
 
 // ─── FINAL PLACINGS ───────────────────────────────────────────────────────────
 function renderFinalPlacings(){
-  renderFinalistsPlacings();
+  renderFinalistsDisplay();
   renderPodiumDisplay();
 }
 
-function renderFinalistsPlacings(){
+function renderFinalistsDisplay(){
   const wrap=document.getElementById('finalists-wrap');
-  if(!finalPlacingFinalists.length){
-    wrap.innerHTML='<p style="color:var(--ink-light);font-size:14px;padding:20px 0">No finalists added yet.</p>';
+  if(!finalists.length){
+    wrap.innerHTML='<p style="color:var(--ink-light);font-size:14px;padding:20px 0">No finalists selected in the Finals tab yet.</p>';
     return;
   }
-  wrap.innerHTML=finalPlacingFinalists.map(id=>{
+  wrap.innerHTML=finalists.map(id=>{
     const p=participants.find(x=>x.id===id);
     if(!p)return'';
-    return `<div class="finalist-card" id="finalist-placing-${id}">
+    return `<div class="finalist-card">
       <div class="finalist-card-avatar">${initials(p.name)}</div>
       <div class="finalist-card-info">
         <div class="finalist-card-name">${esc(p.name||'Unnamed')}</div>
         <div class="finalist-card-meta">${esc(p.email||'')} · Rate: ${p.rate||'—'}/25</div>
       </div>
-      <button class="ap-btn" onclick="removeFinalistPlacing('${id}')" title="Remove">✕</button>
     </div>`;
   }).join('');
 }
@@ -741,14 +742,13 @@ function renderPodiumDisplay(){
     if(!p)return'';
     const medalClass=pm.medal==='gold'?'gold-badge':pm.medal==='silver'?'silver-badge':'bronze-badge';
     const medalEmoji=pm.medal==='gold'?'🥇':pm.medal==='silver'?'🥈':'🥉';
-    const medalText=pm.medal===
-'gold'?'Gold':pm.medal==='silver'?'Silver':'Bronze';
-    return `<div class="podium-item" id="podium-${pm.id}">
+    const medalText=pm.medal==='gold'?'Gold':pm.medal==='silver'?'Silver':'Bronze';
+    return `<div class="podium-item">
       <div style="display:flex;align-items:center;gap:12px;flex:1">
-        <div class="podium-member-badge ${medalClass}">${medalEmoji}</div>
+        <div style="font-size:32px">${medalEmoji}</div>
         <div>
-          <div class="podium-member-name">${esc(p.name||'Unnamed')}</div>
-          <div class="podium-member-rank">${medalText}</div>
+          <div class="podium-item-name">${esc(p.name||'Unnamed')}</div>
+          <div class="podium-item-rank">${medalText}</div>
         </div>
       </div>
       <button class="ap-btn" onclick="removePodiumMember('${pm.id}')" title="Remove">✕</button>
@@ -756,46 +756,10 @@ function renderPodiumDisplay(){
   }).join('');
 }
 
-function openAddFinalistModal(){
-  const select=document.getElementById('finalist-select');
-  select.innerHTML='<option value="">Select a finalist…</option>';
-  finalists.forEach(id=>{
-    if(!finalPlacingFinalists.includes(id)){
-      const p=participants.find(x=>x.id===id);
-      if(p){
-        const opt=document.createElement('option');
-        opt.value=id;
-        opt.textContent=p.name||'Unnamed';
-        select.appendChild(opt);
-      }
-    }
-  });
-  document.getElementById('add-finalist-modal').classList.add('open');
-}
-
-function closeAddFinalist(){
-  document.getElementById('add-finalist-modal').classList.remove('open');
-}
-
-function addFinalistToPlacements(){
-  const id=document.getElementById('finalist-select').value;
-  if(!id){alert('Please select a finalist');return}
-  if(!finalPlacingFinalists.includes(id)){
-    finalPlacingFinalists.push(id);
-  }
-  closeAddFinalist();
-  renderFinalistsPlacings();
-}
-
-function removeFinalistPlacing(id){
-  finalPlacingFinalists=finalPlacingFinalists.filter(x=>x!==id);
-  renderFinalistsPlacings();
-}
-
 function openAddPodiumModal(){
   const select=document.getElementById('podium-member-select');
   select.innerHTML='<option value="">Select a finalist…</option>';
-  finalPlacingFinalists.forEach(id=>{
+  finalists.forEach(id=>{
     if(!podiumMembers.find(x=>x.id===id)){
       const p=participants.find(x=>x.id===id);
       if(p){
@@ -845,35 +809,32 @@ function loadParticipantPortal(p){
 function showStatusPage(){
   const p=currentParticipant;if(!p)return;
   const box=document.getElementById('letter-box');
-  box.innerHTML=buildStatusUpdate(p);
+  
+  // Build tabs
+  const tabsWrap=document.getElementById('status-tabs-wrap');
+  tabsWrap.innerHTML=`
+    <button class="status-tab active" id="status-tab-finalists" onclick="switchStatusTab('finalists')">Finalists</button>
+    <button class="status-tab" id="status-tab-podium" onclick="switchStatusTab('podium')">Podium</button>
+  `;
+  
+  // Build content
+  box.innerHTML=`
+    <div class="status-view active" id="status-view-finalists">${buildFinalistsView(p)}</div>
+    <div class="status-view" id="status-view-podium">${buildPodiumView(p)}</div>
+  `;
+  
   show('status-page');
-  setTimeout(()=>runConfetti(),400);
+  // Only show confetti if there are finalists
+  if(finalists.length>0){
+    setTimeout(()=>runConfetti(),400);
+  }
 }
 
-function buildStatusUpdate(p){
-  const finalistNames=finalPlacingFinalists.map(id=>{
+function buildFinalistsView(p){
+  const finalistNames=finalists.map(id=>{
     const finalist=participants.find(x=>x.id===id);
     return finalist?esc(finalist.name||'Unnamed'):'';
   }).filter(Boolean).join(', ');
-  
-  const podiumHtml=podiumMembers.length?`
-    <div style="margin-top:24px">
-      <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">🏆 Podium</div>
-      ${podiumMembers.map(pm=>{
-        const podiumP=participants.find(x=>x.id===pm.id);
-        if(!podiumP)return'';
-        const medalEmoji=pm.medal==='gold'?'🥇':pm.medal==='silver'?'🥈':'🥉';
-        const medalText=pm.medal==='gold'?'Gold':pm.medal==='silver'?'Silver':'Bronze';
-        return `<div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(123,158,135,.2)">
-          <div style="font-size:18px">${medalEmoji}</div>
-          <div>
-            <div style="font-size:14px;font-weight:600;color:var(--ink)">${esc(podiumP.name||'Unnamed')}</div>
-            <div style="font-size:12px;color:var(--sage);font-weight:600">${medalText}</div>
-          </div>
-        </div>`;
-      }).join('')}
-    </div>
-  `:'';
   
   return `
     <div style="position:absolute;top:0;left:0;right:0;height:6px;background:var(--sage)"></div>
@@ -886,6 +847,37 @@ function buildStatusUpdate(p){
     <div style="background:var(--sage-pale);border:1.5px solid rgba(123,158,135,.3);border-radius:var(--radius-sm);padding:20px 24px;margin:24px 0">
       <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">✓ Finalists</div>
       <div style="font-size:14px;color:var(--ink);line-height:1.6;font-weight:500">${finalistNames||'No finalists announced yet'}</div>
+    </div>
+    <p style="font-size:15px;color:var(--ink-muted);margin-top:32px;line-height:1.8;font-weight:300">Thank you for your participation in this tournament. We appreciate your effort and dedication.</p>
+    <p style="font-size:14px;color:var(--ink-muted);font-weight:300;margin-top:32px">With best wishes,<br><strong style="color:var(--ink)">The Tournament Panel</strong><br><span style="font-size:13px;font-style:italic">Speech &amp; Debate Tournament</span></p>
+  `;
+}
+
+function buildPodiumView(p){
+  const podiumHtml=podiumMembers.length?podiumMembers.map(pm=>{
+    const podiumP=participants.find(x=>x.id===pm.id);
+    if(!podiumP)return'';
+    const medalEmoji=pm.medal==='gold'?'🥇':pm.medal==='silver'?'🥈':'🥉';
+    const medalText=pm.medal==='gold'?'Gold':pm.medal==='silver'?'Silver':'Bronze';
+    return `<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(123,158,135,.2)">
+      <div style="font-size:28px">${medalEmoji}</div>
+      <div>
+        <div style="font-size:15px;font-weight:600;color:var(--ink)">${esc(podiumP.name||'Unnamed')}</div>
+        <div style="font-size:12px;color:var(--sage);font-weight:600">${medalText}</div>
+      </div>
+    </div>`;
+  }).join(''):'<p style="color:var(--ink-light);font-size:14px;padding:20px 0">No podium members announced yet.</p>';
+  
+  return `
+    <div style="position:absolute;top:0;left:0;right:0;height:6px;background:var(--sage)"></div>
+    <div style="text-align:center;margin-bottom:48px">
+      <div style="font-family:'Playfair Display',serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:8px">Speech &amp; Debate Tournament</div>
+      <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--ink);margin-bottom:8px">Tournament Update</div>
+      <div style="width:60px;height:2px;background:var(--sage);margin:0 auto"></div>
+    </div>
+    <p style="font-size:15px;color:var(--ink-muted);margin-bottom:8px;font-weight:300">Dear <strong style="color:var(--ink)">${esc(p.name||'Participant')}</strong>,</p>
+    <div style="background:var(--sage-pale);border:1.5px solid rgba(123,158,135,.3);border-radius:var(--radius-sm);padding:20px 24px;margin:24px 0">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">🏆 Podium</div>
       ${podiumHtml}
     </div>
     <p style="font-size:15px;color:var(--ink-muted);margin-top:32px;line-height:1.8;font-weight:300">Thank you for your participation in this tournament. We appreciate your effort and dedication.</p>
